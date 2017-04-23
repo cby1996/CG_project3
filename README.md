@@ -27,3 +27,4 @@ OPENGL有两种着色器，分别为顶点着色器和片元着色器，本实�
         gl_FragColor = finalcolor;
 
 如果一个多边形上只有一种颜色，而且当前多边形面所使用的颜色是这个多边形的顶点中最后一个被渲染的顶点的颜色，而不是有这种插值方法得到的平滑效果，这个时候的渲染就叫做Flat Shading。在低版本的OPENGL中通过调用函数glShadeModel(GL_FLAT)实现。
+
