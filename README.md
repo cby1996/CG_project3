@@ -7,9 +7,7 @@ OPENGL有两种着色器，分别为顶点着色器和片元着色器，本实�
         vec4 mypos = gl_ModelViewMatrix * myvertex;
         vec3 mypos_ = mypos.xyz / mypos.w;
         vec3 lightdir =lightposn[numused].xyz-mypos_;
-        lightdir = normalize(lightdir);
-
-
+       
 下面计算漫反射光，反射光线的强度既依赖于材质，也依赖于光源相对表面的位置。一个物体的表面是粗糙的话，就会发生漫反射，理想的漫反射表面是如此粗糙，以至于各个方向的反射光强度都相等，称为lambert表面，首先需要将ModelViewMatrix求逆计算镜头的位置，然后求转置并与mynormal相乘求出入射点的法向量，然后计算L*cos(n,l)，L是入射光强和漫反射系数的乘积，l是光源入射的方向反向 
 
         vec3 mynormal_ = (gl_ModelViewMatrixInverseTranspose*vec4(mynormal,0.0)).xyz ;
